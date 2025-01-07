@@ -40,9 +40,6 @@ export class CategoriesComponent implements AfterViewInit {
   showForm: Boolean = false;
   showLoading: Boolean = false;
   constructor(private categoryService: CategoryService) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   category!: Category;
 
@@ -76,7 +73,6 @@ export class CategoriesComponent implements AfterViewInit {
 
   onSave(category: Category) {
     const saved = lastValueFrom(this.categoryService.save(category));
-    console.log('saved', saved);
     this.hideCategoryForm();
   }
 
